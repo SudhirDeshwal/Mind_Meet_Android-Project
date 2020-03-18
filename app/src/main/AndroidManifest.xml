@@ -9,10 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sudhir_shivam_test"></activity>
-        <activity android:name=".test_shivam" />
-        <activity android:name=".testsudhir" />
-        <activity android:name=".test_sudhir" />
         <activity android:name=".SignUp_Form_Activity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".Login_Form_Activity">
