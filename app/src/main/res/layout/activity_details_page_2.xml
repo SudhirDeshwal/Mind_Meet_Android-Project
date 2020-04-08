@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".DetailsPage"
-    android:id="@+id/mainLayout"
+    tools:context=".Details_Page_2"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
@@ -288,7 +287,8 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintBottom_toTopOf="@id/bfinish"
-            app:layout_constraintTop_toBottomOf="@+id/l9" />
+            app:layout_constraintTop_toBottomOf="@+id/l9"
+            android:onClick="btn_detailsPage_back"/>
 
         <Button
             android:id="@+id/bfinish"
