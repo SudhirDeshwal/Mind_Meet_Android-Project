@@ -1,42 +1,63 @@
 {
   "project_info": {
-    "project_number": "214514074873",
-    "firebase_url": "https://mindmeet-36463.firebaseio.com",
-    "project_id": "mindmeet-36463",
-    "storage_bucket": "mindmeet-36463.appspot.com"
+    "project_number": "14799487390",
+    "firebase_url": "https://chatapplication-c6c35.firebaseio.com",
+    "project_id": "chatapplication-c6c35",
+    "storage_bucket": "chatapplication-c6c35.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:214514074873:android:79588a163dbeab7c514e28",
+        "mobilesdk_app_id": "1:14799487390:android:52f7e71aedcf25166a568f",
         "android_client_info": {
-          "package_name": "com.example.sudhir_project_phase"
+          "package_name": "com.example.chatapplication"
         }
       },
       "oauth_client": [
         {
-          "client_id": "214514074873-hejfl3qq2oq93nuqon9f5amfg0t0nut6.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.sudhir_project_phase",
-            "certificate_hash": "8162c4980a3a6db93a3d4b40d77493271d0cb171"
-          }
-        },
-        {
-          "client_id": "214514074873-nlf8fobg2phee0emuna6qr6n5hpkshjc.apps.googleusercontent.com",
+          "client_id": "14799487390-g15qj8qnjd07pfjsarlh1adsujhjh0fn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDTtjMyHua06SRUY1jmKwyPu6l7rWlX1s8"
+          "current_key": "AIzaSyDyNCV5iYQk40ah7JigGgY2qZK3HkNTmHs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "214514074873-nlf8fobg2phee0emuna6qr6n5hpkshjc.apps.googleusercontent.com",
+              "client_id": "14799487390-g15qj8qnjd07pfjsarlh1adsujhjh0fn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14799487390:android:2881ef613f1f49496a568f",
+        "android_client_info": {
+          "package_name": "com.example.sudhir_project_phase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14799487390-g15qj8qnjd07pfjsarlh1adsujhjh0fn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyNCV5iYQk40ah7JigGgY2qZK3HkNTmHs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14799487390-g15qj8qnjd07pfjsarlh1adsujhjh0fn.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
