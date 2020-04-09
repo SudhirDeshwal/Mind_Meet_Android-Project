@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/details_bg3"
+    android:background="@drawable/bg_4"
     android:padding="30dp"
     tools:context=".SignUp_Form_Activity">
 
@@ -22,7 +22,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="User Name"
+            android:id="@+id/et_userename"
             android:inputType="text"
+
             android:textSize="20sp"
             android:ems="10"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -39,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email Address"
+            android:id="@+id/et_email"
             android:inputType="text"
             android:textSize="20sp"
             android:ems="10"/>
@@ -50,12 +53,13 @@
         android:textColorHint="@color/colorAccent"
         android:focusable="true"
         android:focusableInTouchMode="true"
-        android:layout_marginTop="5dp">>
+        android:layout_marginTop="5dp">
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
+            android:id="@+id/et_phone"
             android:inputType="text"
             android:textSize="20sp"
             android:ems="10"/>
@@ -73,6 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
+            android:id="@+id/et_password"
             android:inputType="text"
             android:textSize="20sp"
             android:ems="10"/>
@@ -91,6 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Confirm Password"
+            android:id="@+id/et_confirm_password"
             android:inputType="text"
             android:textSize="20sp"
             android:ems="10"/>
@@ -100,7 +106,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:id="@+id/radio_gender"
+        android:onClick="RadioClicked"
         android:layout_marginTop="15dp">
 
         <TextView
@@ -113,10 +120,11 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="10dp"
             android:text="Male"
-            android:textSize="20sp"
-            android:layout_marginLeft="10dp">
+            android:id="@+id/radio_male"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp">
 
         </RadioButton>
 
@@ -124,6 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Female"
+            android:id="@+id/radio_female"
             android:textColor="@color/colorAccent"
             android:textSize="20sp"
             android:layout_marginLeft="10dp"
@@ -139,6 +148,7 @@
         android:textSize="22dp"
         android:layout_marginTop="40dp"
         android:textColor="#ffff"
+
         android:background="@drawable/button_rounded"
         android:onClick="btn_details_1">
 
