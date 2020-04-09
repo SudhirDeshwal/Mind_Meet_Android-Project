@@ -6,17 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class SignUp_Form_Activity extends AppCompatActivity {
+public class Details_Page_1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up__form_);
-        getSupportActionBar().setTitle("Sign UP");
+        setContentView(R.layout.activity_details__page_1);
     }
 
-    public void btn_details_1(View view) {
+    public void btn_detailsPage_1(View view) {
 
-        startActivity(new Intent(getApplicationContext(),Details_Page_1.class));
+        startActivity(new Intent(getApplicationContext(),Details_Page_2.class));
+
     }
 }
