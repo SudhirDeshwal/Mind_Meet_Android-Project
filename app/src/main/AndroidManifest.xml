@@ -11,13 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".FindUserActivity"/>
-        <activity android:name=".SignUp_Form_Activity" />
 
-        <activity android:name=".Login_Form_Activity" />
-
-            <activity android:name=".DetailsPage" />
-
-        <activity android:name=".MainActivity"/>
         <activity android:name=".MainHomePage"/>
 
         <activity android:name=".LoginActivity">
