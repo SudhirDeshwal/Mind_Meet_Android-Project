@@ -77,7 +77,7 @@ public class SignUp_Form_Activity extends AppCompatActivity {
         String email=et_email.getText().toString();
         String password =et_password.getText().toString();
         String phone=et_phone.getText().toString();
-        User user=new User(email,username,password,phone,gender,"");
+        Person user=new Person(email,username,password,phone,gender,"");
         System.out.println(username+email+password+phone+username);
         databasereference.push().setValue(user);
     }

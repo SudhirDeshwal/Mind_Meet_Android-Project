@@ -1,6 +1,6 @@
 package com.example.sudhir_project_phase;
 
-public class User {
+public class Person {
     private  String imageURL;
     private String id;
     private String email;
@@ -9,7 +9,7 @@ public class User {
     private String password;
     private String username;
 
-    public User( String email, String phone, String gender, String password, String username,String imageURL) {
+    public Person( String email, String phone, String gender, String password, String username,String imageURL) {
      //  this.id = id;
         this.email = email;
         this.phone = phone;
