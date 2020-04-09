@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,10 +20,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class MobileAuthenticationPage extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     private EditText editNum, editCode;
     private Button btnVerify;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
@@ -35,6 +43,7 @@ public class MobileAuthenticationPage extends AppCompatActivity {
         setContentView(R.layout.activity_mobile_authentication_page);
         FirebaseApp.initializeApp(this);
         userIsLoggedIn();
+
         editCode = (EditText) findViewById(R.id.edcode);
 
         editNum = (EditText) findViewById(R.id.ednum);
@@ -46,8 +55,9 @@ public class MobileAuthenticationPage extends AppCompatActivity {
             public void onClick(View v) {
                 if(verificationId !=null)
                 {verifyNumberWithCode();}
-                else
+                else {
                     startPhoneNumberVerification();
+                }
             }
         });
 
@@ -55,6 +65,8 @@ public class MobileAuthenticationPage extends AppCompatActivity {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                 signInWithPhoneAuthCred(phoneAuthCredential);
+
+                Toast.makeText(getApplicationContext(), "Error with msg", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -62,7 +74,6 @@ public class MobileAuthenticationPage extends AppCompatActivity {
                 super.onCodeSent(verifaction, forceResendingToken);
                 verificationId=verifaction;
                 btnVerify.setText("Verify Code");
-
             }
 
             @Override
@@ -80,11 +91,38 @@ public class MobileAuthenticationPage extends AppCompatActivity {
     }
 
     private void signInWithPhoneAuthCred(PhoneAuthCredential phoneAuthCredential) {
+
+        Toast.makeText(getApplicationContext(), "Inside signed in phone auth credit", Toast.LENGTH_SHORT).show();
         FirebaseAuth.getInstance().signInWithCredential(phoneAuthCredential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    userIsLoggedIn();
+                    final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                    if(user!=null)
+                    {
+                        final DatabaseReference mUserDB = FirebaseDatabase.getInstance().getReference().child("user").child(user.getUid());
+                        mUserDB.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(!dataSnapshot.exists())
+                                {
+                                    Map<String,Object> userMap = new HashMap<>();
+                                    userMap.put("phone", user.getPhoneNumber());
+
+                                    userMap.put("name",user.getPhoneNumber());
+                                    mUserDB.updateChildren(userMap);
+                                }
+                                userIsLoggedIn();
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                Toast.makeText(getApplicationContext(), "Error with msg", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
                 }
             }
 
@@ -93,6 +131,7 @@ public class MobileAuthenticationPage extends AppCompatActivity {
 
     private void userIsLoggedIn() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
         if (user != null) {
             Intent i = new Intent(getApplicationContext(), MainHomePage.class);
 
