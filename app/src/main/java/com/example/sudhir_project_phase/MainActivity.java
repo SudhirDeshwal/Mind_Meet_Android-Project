@@ -13,5 +13,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTheme(R.style.AppTheme);
+    }
+
+    public void detailsPage(View v)
+    {
+        Intent i=new Intent(this,DetailsPage.class);
+
+        startActivity(i);
+
     }
 }
