@@ -12,7 +12,7 @@ public class Login_Form_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login__form_);
-        getSupportActionBar().setTitle("Login");
+      //  getSupportActionBar().setTitle("Login");
     }
 
     public void btn_signup_form(View view) {

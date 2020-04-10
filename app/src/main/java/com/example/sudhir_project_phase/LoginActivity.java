@@ -65,8 +65,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                 signInWithPhoneAuthCred(phoneAuthCredential);
-
-                Toast.makeText(getApplicationContext(), "Error with msg", Toast.LENGTH_SHORT).show();
             }
 
             @Override
